@@ -1,5 +1,11 @@
 # stm32 project
 
+[一、标准库开发环境的搭建与配置](#标准库开发环境的搭建与配置)
+
+[二、GPIO](#GPIO)
+
+
+
 ## 标准库开发环境的搭建与配置
 
 ###   <font color=red>1. 打开keil</font>
@@ -24,7 +30,7 @@
 
 ### <font color=red>2. 打开工程文件夹（2-1）</font>
 
-* <b><font color=blue>新建</font>四个文件夹 <mark>Start</mark>、<mark>Library</mark>、<mark>User</mark></b>
+* <b><font color=blue>新建</font>四个文件夹 <mark>Start</mark>（头文件）、<mark>Library</mark>（库函数）、<mark>User</mark></b>
   + **`Start`**
     + arm文件夹 ：所有
     + STM32F10x文件：两个system文件+stm32f10x.h
@@ -81,3 +87,14 @@
         + <b>`Flash and Download`</b>
 
           >  勾选 `Reset and Run`
+
+
+
+## GPIO
+
+1. 使用RCC开启GPIO的时钟
+2. 使用 `GPIO_Init`  初始化
+3. 使用输出或输入函数控制GPIO口
+
+>  涉及RCC和GPIO两个外设的函数
+
