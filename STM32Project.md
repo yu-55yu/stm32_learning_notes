@@ -55,7 +55,7 @@
     > 新建三个组
 
     + <b>Start</b> -- `Add Files` --> 
-      + 后缀为md的启动文件（.s）![](C:\Users\Lenovo\Desktop\jsy\STM32资料\图片1.png)
+      + 后缀为md的启动文件（.s）![](C:\Users\Lenovo\Desktop\STM32Project\STM32资料\图片1.png)
       + 所有（.c）(.h）文件
     + <b>Library</b> -- `Add Files` --> 
       + 所有文件
@@ -87,14 +87,61 @@
         + <b>`Flash and Download`</b>
 
           >  勾选 `Reset and Run`
+    
+    
 
-
+<font color=pink>(●ˇ∀ˇ●)接下来是开始写代码（熟练使用contrlC contrlV contrlF）</font>
 
 ## GPIO
 
 1. 使用RCC开启GPIO的时钟
+
+   ```c
+   void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
+   ```
+
 2. 使用 `GPIO_Init`  初始化
+
+   ```c
+   void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
+   ```
+
 3. 使用输出或输入函数控制GPIO口
 
->  涉及RCC和GPIO两个外设的函数
+### 一、GPIO输出
+
+```c
+void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal);
+void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);
+
+uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//没用到
+uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);//没用到
+```
+
+>  下面三个都需要使用延时函数
+>
+>  2.推挽模式高低电平都有驱动能力    `GPIO_Mode_Out_PP`
+>
+>  开漏模式`GPIO_Mode_Out_OD` 低电平有高电平没有（？
+
+- ### LED闪烁
+
+- ### 流水灯
+
++ ### 蜂鸣器
+
+### 二、GPIO输入
+
+```c
+uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);
+```
+
++ ### 按键控制LED
+
++ 
+
+
 
