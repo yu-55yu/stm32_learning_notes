@@ -76,21 +76,30 @@ int main(){
 	//使用 `GPIO_Init` 初始化
 	GPIO_InitTypeDef GPIO_InitStructure;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA,&GPIO_InitStructure);
 	
-	//使用输出或输入函数控制gpio口
-	//GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-	//GPIO_SetBits(GPIOA, GPIO_Pin_0);
-	//GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_RESET);
+	
 
 	
 	while(1)
 	{
-		GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_RESET);
+		GPIO_Write(GPIOA, ~0X0001);//0000 0000 0000 0001取反
 		delay_ms(500);
-		GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_SET);
+		GPIO_Write(GPIOA, ~0X0002);
+		delay_ms(500);
+		GPIO_Write(GPIOA, ~0X0004);
+		delay_ms(500);
+		GPIO_Write(GPIOA, ~0X0008);
+		delay_ms(500);
+		GPIO_Write(GPIOA, ~0X0010);
+		delay_ms(500);
+		GPIO_Write(GPIOA, ~0X0020);
+		delay_ms(500);
+		GPIO_Write(GPIOA, ~0X0040);
+		delay_ms(500);
+		GPIO_Write(GPIOA, ~0X0080);
 		delay_ms(500);
 	}
 }
