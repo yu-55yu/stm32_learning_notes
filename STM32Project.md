@@ -106,19 +106,42 @@
    void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
    ```
 
+   + 定义结构体
+
+     ```c
+     GPIO_InitTypeDef GPIO_InitStructure;
+     ```
+
+   + 赋值结构体
+
+     ```c
+     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;//这里可以用或同时复制多个
+     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+     ```
+
+   + 初始化引脚
+
+     ```c
+     GPIO_Init(GPIOB,&GPIO_InitStructure);
+     ```
+
 3. 使用输出或输入函数控制GPIO口
 
+   <mark>常用读写函数</mark>
+
+   ```c
+   uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+   uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);
+   uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+   uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);
+   void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+   void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+   void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal);
+   void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);
+   ```
+
 ### 一、GPIO输出
-
-```c
-void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal);
-void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);
-
-uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//没用到
-uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);//没用到
-```
 
 >  下面三个都需要使用延时函数
 >
@@ -134,14 +157,9 @@ uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);//没用到
 
 ### 二、GPIO输入
 
-```c
-uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);
-```
-
 + ### 按键控制LED
 
-+ 
++ ### 光敏传感器控制蜂鸣器
 
 
 
