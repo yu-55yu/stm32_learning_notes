@@ -50,7 +50,7 @@ uint16_t Timer_GetCounter(void)
 }
 
 
-/*
+
 void TIM2_IRQHandler(void)
 {
 	if(TIM_GetITStatus(TIM2,TIM_IT_Update)==SET)
@@ -59,4 +59,4 @@ void TIM2_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
 	}
 }
-*/
+
