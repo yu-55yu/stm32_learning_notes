@@ -23,7 +23,8 @@ void PWM_Init(void)
 	TIM_TimeBaseInitStructure.TIM_Period = 20000 -1;//ARR
 	TIM_TimeBaseInitStructure.TIM_Prescaler = 72 - 1;//PSC
 	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;
-		
+	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
+
 	
 	//配置输入比较单元
 	TIM_OCInitTypeDef TIM_OCInitStructure;//(给初值)

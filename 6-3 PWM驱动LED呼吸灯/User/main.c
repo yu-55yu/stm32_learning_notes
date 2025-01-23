@@ -16,13 +16,14 @@ int main(){
 	{
 		for(i=0; i<=100; i++)
 		{
+			
 			PWM_SetCompare1(i);
-			delay_ms(10);
+			delay_ms(15);
 		}
-		for(i=0; i<=100; i++)
+		for(i=1; i<=100; i++)
 		{
 			PWM_SetCompare1(100-i);
-			delay_ms(10);
+			delay_ms(15);
 		}
 	}
 }

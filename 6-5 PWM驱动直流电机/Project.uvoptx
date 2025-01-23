@@ -971,8 +971,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Hardware\Servo.c</PathWithFileName>
-      <FilenameWithoutPath>Servo.c</FilenameWithoutPath>
+      <PathWithFileName>.\Hardware\Motor.c</PathWithFileName>
+      <FilenameWithoutPath>Motor.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -983,8 +983,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Hardware\Servo.h</PathWithFileName>
-      <FilenameWithoutPath>Servo.h</FilenameWithoutPath>
+      <PathWithFileName>.\Hardware\Motor.h</PathWithFileName>
+      <FilenameWithoutPath>Motor.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
